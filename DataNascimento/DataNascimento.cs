@@ -17,7 +17,9 @@ namespace DataNascimento
         {
             get
             {
-                return "Nasceu numa quinta ou sexta feira.\n";
+                string frase = "O dia da Semana em que você nasceu é ";
+                frase += data.ToString("dddd") + ".\n";
+                return frase;
             }
         }
         private string idade
