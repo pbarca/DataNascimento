@@ -17,7 +17,7 @@ namespace DataNascimento
         {
             get
             {
-                string frase = "O dia da Semana em que você nasceu é ";
+                string frase = "O dia da Semana em que nasceu é ";
                 frase += data.ToString("dddd") + ".\n";
                 return frase;
             }
@@ -26,7 +26,14 @@ namespace DataNascimento
         {
             get
             {
-                return "Tem 99 anos e meio. \n";
+                DateTime hoje = DateTime.Now;
+                TimeSpan dif = hoje - data;
+                DateTime idade = DateTime.MinValue + dif;
+                string frase = "A sua idade é ";
+                frase += (idade.Year - 1) + " anos, ";
+                frase += (idade.Month - 1) + " meses e ";
+                frase += (idade.Day - 1) + " dias.\n";
+                return frase;
             }
         }
         private string signo
